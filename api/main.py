@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 reader = easyocr.Reader(["en"])
+handler = Mangum(app)  # This allows Vercel to run the FastAPI app
 
 app = FastAPI()
 app.add_middleware(
